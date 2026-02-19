@@ -175,19 +175,3 @@ class PaymentView(APIView):
         else:
             return Response({"message":"Invalid payment status."}, status=status.HTTP_400_BAD_REQUEST)
     
-
-# My Notes
-"""
-In ProductViewSet:
-self.action = When I use Viewset in DRF, it auto maps HTTP methods to actions: list, retrieve(get single product), create, update, destroy, partial_update(update product id)
-self.action = It tells me which operation is happening inside a Viewset.
-I used Viewset because it combines mulitple actions(list, retrieve, create,etc..) into one class, and cleaner if I want full CRUD in one place
-
-But Generics are better for single-purpose endpoints, not like Viewset
---------------------------------------------------------------------
-In AddCart:
-cart_item, created = CartItem.objects.get_or_create() -> If Cart exists, it will return it and created will be False. 
-If cart does not exist, it will create a cart and created will be True.
-get_or_create() = It return a tuple -> (object, created_flag)
-    
-"""
