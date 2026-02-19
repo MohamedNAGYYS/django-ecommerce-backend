@@ -158,10 +158,3 @@ class PaymentTest(TestCase):
         response=self.client.post('/store/payment/', {'order_id':1, 'payment_method':'PayPal', 'status':"Pending"})
         self.assertEqual(response.status_code,403)
         
-# Integration Test:
-"""
-Integration Test for checking if everything works together, it is unlike unit test in python which tests small parts of code 
-in isolation. 
-
-Integration Test is for making sure everybody is alright and works together.
-"""
